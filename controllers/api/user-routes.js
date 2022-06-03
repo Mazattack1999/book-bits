@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth');
 // GET /api/users
 router.get('/', async (req, res) => {
     try {
-        // Access our User model and run .findAll() method
+        // get all users
         const dbUserData = await User.findAll({
             attributes: { exclude: ['password'] }
         })
@@ -20,6 +20,7 @@ router.get('/', async (req, res) => {
 
 // GET /api/users/1
 router.get('/:id', async (req, res) => {
+    // get single user
     try { 
         const dbUserData = await User.findOne({
             where: {
@@ -51,5 +52,77 @@ router.get('/:id', async (req, res) => {
         res.status(500).json(err);
     }
   });
+
+  // POST api/users
+router.post('/', withAuth, async (req, res) => {
+    try {
+        // create new user
+        const dbUserData = await User.create({
+            username: req.body.username,
+            password: req.body.password
+        })
+
+        req.session.save(() => {
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username,
+            req.session.loggedIn = true;
+
+            res.json(dbUserData);
+        })
+        
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+// POST api/users/login
+router.post('/login', async (req, res) => {
+    try {
+        const dbUserData = await User.findOne({
+            where: {
+                username: req.body.username
+            }
+        })
+
+        if (!dbUserData) {
+            res.status(400).json({ message: 'No user with that username' });
+            return;
+        }
+
+        //Verify user
+        const validPassword = dbUserData.checkPassword(req.body.password);
+
+        if (!validPassword) {
+            res.status(400).json({ message: 'Incorrect Password' });
+            return;
+        }
+
+        req.session.save(() => {
+            // declare session variables
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true
+
+            res.json({ user: dbUserData, message: 'You are now logged in!' });
+        })
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+// POST /logout
+router.post('/logout', withAuth, (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        })
+    } else {
+        res.status(404).end();
+    }
+})
+
+
 
 module.exports = router;
