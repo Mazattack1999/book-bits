@@ -3,7 +3,7 @@ const seedBooks = require("./book-data");
 const seedReviews = require("./review-data");
 const seedComments = require("./comment-data");
 
-const sequelize = require("../config/config");
+const sequelize = require("../config/connection");
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
