@@ -25,6 +25,7 @@ Review.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        // define star_rating column
         star_rating: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -33,6 +34,7 @@ Review.init(
                 max: 5
             }
         },
+        // define user_id column
         user_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -40,6 +42,7 @@ Review.init(
                 key: 'id'
             }
         },
+        // define book_id column
         book_id: {
             type: DataTypes.INTEGER,
             references: {
