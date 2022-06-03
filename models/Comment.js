@@ -1,8 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const bcrypt = require('bcrypt');
 
-// create our User model
+// create our Comment model
 class Comment extends Model {}
 
 // define table columns and configuration
@@ -15,35 +14,25 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true
         },
-        // define a book_title column
-        book_title: {
-            type: DataTypes.VARCHAR(30),
-            allowNull: false
-        },
-        // define review_text column
-        review_text: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        star_rating: {
+        // define a review_id column
+        review_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            validate: {
-                min: 1,
-                max: 5
-            }
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
             references: {
-                model: 'user',
+                model: 'review',
                 key: 'id'
             }
         },
-        book_id: {
+        // define comment_text column
+        comment_text: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        user_id: {
             type: DataTypes.INTEGER,
+            allowNull: true,
             references: {
-                model: 'book',
+                model: 'user',
                 key: 'id'
             }
         }
@@ -53,8 +42,8 @@ Comment.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'review'
+        modelName: 'comment'
     }
 );
 
-module.exports = Review;
+module.exports = Comment;
