@@ -16,12 +16,12 @@ Book.init(
         },
         // define a title column
         title: {
-            type: DataTypes.VARCHAR(30),
+            type: DataTypes.STRING,
             allowNull: false
         },
         // define author column
         author: {
-            type: DataTypes.VARCHAR(30),
+            type: DataTypes.STRING,
             allowNull: false,
         }
     },

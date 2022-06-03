@@ -16,7 +16,7 @@ Review.init(
         },
         // define a book_title column
         book_title: {
-            type: DataTypes.VARCHAR(30),
+            type: DataTypes.STRING,
             allowNull: false
         },
         // define review_text column
