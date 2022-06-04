@@ -19,6 +19,11 @@ Review.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        // define an author column
+        author: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         // define review_text column
         review_text: {
             type: DataTypes.STRING,
@@ -38,14 +43,6 @@ Review.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
-                key: 'id'
-            }
-        },
-        // define book_id column
-        book_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'book',
                 key: 'id'
             }
         }

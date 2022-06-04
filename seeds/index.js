@@ -1,5 +1,5 @@
 const seedUsers = require("./user-data");
-const seedBooks = require("./book-data");
+// const seedBooks = require("./book-data");
 const seedReviews = require("./review-data");
 const seedComments = require("./comment-data");
 
@@ -12,8 +12,8 @@ const seedAll = async () => {
   await seedUsers();
   console.log("****USERS SEEDED****");
 
-  await seedBooks();
-  console.log("****POSTS SEEDED****");
+  // await seedBooks();
+  // console.log("****POSTS SEEDED****");
 
   await seedReviews();
   console.log("****REVIEWS SEEDED****");
