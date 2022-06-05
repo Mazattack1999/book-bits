@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const bcrypt = require('bcrypt');
 
 // create our User model
 class Review extends Model {}
@@ -17,7 +16,12 @@ Review.init(
         },
         // define a book_title column
         book_title: {
-            type: DataTypes.VARCHAR(30),
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        // define an author column
+        author: {
+            type: DataTypes.STRING,
             allowNull: false
         },
         // define review_text column
@@ -39,14 +43,6 @@ Review.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
-                key: 'id'
-            }
-        },
-        // define book_id column
-        book_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'book',
                 key: 'id'
             }
         }
