@@ -15,26 +15,31 @@
       <h1>
         <a href="/">Book Bits</a>
       </h1>
-      <nav>
-        <div class="search-container">
-            <form action="/search_page">
-            <input type="text" placeholder="Search.." name="search">
-            <button id="searchBtn" type="submit"><i class="fa fa-search"></i></button>
-            </form>
-        </div>
-        {{#if loggedIn}}
-        <a href="/dashboard">My Posts</a>
-        <a href="/saved">Saved Posts</a>
 
-        <button id="logout" class="btn-no-style">logout</button>
-        {{/if}}
-      </nav>
+        <nav>
+          {{!-- remove search container if we run out of time --}}
+          <div class="search-container">
+              <form action="/search_page">
+              <input type="text" placeholder="Search.." name="search">
+              <button id="searchBtn" type="submit"><i class="fa fa-search"></i></button>
+              </form>
+          </div>
+          {{#if loggedIn}}
+          <a href="/dashboard">My Posts</a>
+          <a href="/saved">Saved Posts</a>
+
+          <button id="logout" class="btn-no-style">logout</button>
+          {{/if}}
+        </nav>
     </header>
+
     <article>
+      {{!-- add in image src once we decide on background --}}
+       <img src="/assets/..." class="background-img" id="background-img" />
       {{#if loggedIn}}
-      <br>
+      {{!-- display nothing, but background img if logged In --}}
       {{else}}
-      <article>
+      <article class="login-signup">
         <form class="login-form">
           <div>
             <label for="username-login">User Name:</label>
@@ -64,6 +69,7 @@
         </form>
       {{/if}}
     </article>
+
     <main>
       {{{ body }}}
     </main>
