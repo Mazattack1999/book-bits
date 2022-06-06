@@ -16,21 +16,54 @@
         <a href="/">Book Bits</a>
       </h1>
       <nav>
-        {{#if loggedIn}}
-        <a href="/myposts">My Posts</a>
-        <a href="/saved">Saved Posts</a>
         <div class="search-container">
             <form action="/search_page">
             <input type="text" placeholder="Search.." name="search">
             <button id="searchBtn" type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
+        {{#if loggedIn}}
+        <a href="/dashboard">My Posts</a>
+        <a href="/saved">Saved Posts</a>
+
         <button id="logout" class="btn-no-style">logout</button>
-        {{else}}
-        <a href="/login">login</a>
         {{/if}}
       </nav>
     </header>
+    <article>
+      {{#if loggedIn}}
+      <br>
+      {{else}}
+      <article>
+        <form class="login-form">
+          <div>
+            <label for="username-login">User Name:</label>
+            <input type="text" id="username-login" />
+          </div>
+          <div>
+            <label for="password-login">password:</label>
+            <input type="password" id="password-login" />
+          </div>
+          <div>
+            <button type="submit">login</button>
+          </div>
+        </form>
+
+        <form class="signup-form">
+          <div>
+            <label for="username-signup">username:</label>
+            <input type="text" id="username-signup" />
+          </div>
+          <div>
+            <label for="password-signup">password:</label>
+            <input type="password" id="password-signup" />
+          </div>
+          <div>
+            <button type="submit">signup</button>
+          </div>
+        </form>
+      {{/if}}
+    </article>
     <main>
       {{{ body }}}
     </main>
@@ -40,6 +73,7 @@
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{/if}}
+  <script src="/javascript/login.js"></script>
 </body>
 
 </html>

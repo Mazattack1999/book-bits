@@ -1,0 +1,32 @@
+<article>
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <h1>
+    Edit Review
+  </h1>
+  <form class="edit-review-form">
+    <div>
+      <h2>{{review.title}}</h2>
+    </div>
+    <div>
+        {{!-- insert star review code --}}
+    </div>
+    <button type="submit">Save review</button>
+    <button type="button" class="delete-review-btn">Delete review</button>
+  </form>
+</article>
+
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">add comment</button>
+  </div>
+</form>
+
+{{> comments review.comments}}
+
+<script src="/javascript/edit-review.js"></script>
+<script src="/javascript/delete-review.js"></script>
+<script src="/javascript/comment.js"></script>
