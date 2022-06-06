@@ -52,7 +52,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // POST api/users
-router.post("/", withAuth, async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     // create new user
     const dbUserData = await User.create({
@@ -110,7 +110,7 @@ router.post("/login", async (req, res) => {
 });
 
 // POST /logout
-router.post("/logout", withAuth, (req, res) => {
+router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();

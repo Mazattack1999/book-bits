@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
       include: [User],
     });
     const reviews = dbReviewData.map((review) => review.get({ plain: true }));
-    res.render("homepage", {
+    res.render("home", {
       reviews,
       loggedIn: req.session.loggedIn,
     });
