@@ -33,53 +33,11 @@
         </nav>
     </header>
 
-    <article>
-      {{!-- add in image src once we decide on background --}}
-       <img src="/assets/..." class="background-img" id="background-img" />
-      {{#if loggedIn}}
-      {{!-- display nothing, but background img if logged In --}}
-      {{else}}
-      <article class="login-signup">
-        <form class="login-form">
-          <div>
-            <label for="username-login">User Name:</label>
-            <input type="text" id="username-login" />
-          </div>
-          <div>
-            <label for="password-login">password:</label>
-            <input type="password" id="password-login" />
-          </div>
-          <div>
-            <button type="submit">login</button>
-          </div>
-        </form>
-
-        <form class="signup-form">
-          <div>
-            <label for="username-signup">username:</label>
-            <input type="text" id="username-signup" />
-          </div>
-          <div>
-            <label for="password-signup">password:</label>
-            <input type="password" id="password-signup" />
-          </div>
-          <div>
-            <button type="submit">signup</button>
-          </div>
-        </form>
-      {{/if}}
-    </article>
-
     <main>
       {{{ body }}}
     </main>
 
   </div>
-  
-  {{#if loggedIn}}
-  <script src="/javascript/logout.js"></script>
-  {{/if}}
-  <script src="/javascript/login.js"></script>
 </body>
 
 </html>
