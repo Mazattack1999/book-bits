@@ -1,29 +1,52 @@
 <article>
   <a href="/dashboard"> &larr; Back to dashboard</a>
-  <h1>
-    Edit Review
-  </h1>
-  <form class="edit-review-form">
-    <div>
-      <h2>{{review.title}}</h2>
-    </div>
-    <div>
+  <div class="card m-4">
+    <h1 class="card-header">Edit Review:</h1>
+    <form class="card-body edit-review-form">
+
+      {{!-- use this for front-end js to capture review id to edit --}}
+      <input type="hidden" name="post-id" value="{{review.id}}" />
+
+      <h4>Book Title: <strong>{{review.book_title}}</strong></h4>
+
+{{!-- need to make place in review table to save revew title? --}}
+      <label for="post-title" class="form-label m-2">Title:</label>
+      <input name="post-title" type="text" value="{{review.title}}" class="form-control m-2" />
+
+
+      <div>
+        <label for="star-rating" class="form-label m-2">Star-Rating:</label>
         {{!-- insert star review code --}}
-    </div>
-    <button type="submit">Save review</button>
-    <button type="button" class="delete-review-btn">Delete review</button>
-  </form>
+      </div>
+
+
+      <label class="form-label m-2" for="content">Content:</label>
+      <textarea name="post-content" type="text" class="form-control m-2" rows="5">{{review.review_text}}</textarea>
+
+
+      <div class="d-grid gap-2 d-md-block m-3">
+        <button type="submit" class="btn btn-primary">Update Review</button>
+        <button type="button" class="delete-review-btn btn btn-danger">Delete Review</button>
+      </div>
+
+    </form>
+  </div>
+
 </article>
 
-<form class="comment-form">
+{{!-- do we need this here? adding comment on own post? --}}
+<div class="card m-3">
+  <form class="card-body comment-form">
+    <label class="form-label">Add a comment:</label>
   <div>
-    <textarea name="comment-body"></textarea>
+    <textarea class="form-control" rows="3" name="comment-body"></textarea>
   </div>
 
   <div>
-    <button type="submit">add comment</button>
+    <button class="btn btn-primary m-2" type="submit">Comment</button>
   </div>
 </form>
+</div>
 
 {{> comments review.comments}}
 
