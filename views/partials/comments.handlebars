@@ -1,11 +1,13 @@
 <div class="comments">
   {{#each this}}
-  <section class="comment">
-    <div class="meta">
-      {{user.username}} 
-    </div>
-    <div class="text">
-      {{comment_text}}
+  <section class="card m-4 comment">
+    <div class="card-body">
+      <div class="text card-text">
+        {{comment_text}}
+      </div>
+      <div class="meta card-text text-end">
+        <p><em>- {{user.username}}</em></p>
+      </div>
     </div>
   </section>
   {{/each}}

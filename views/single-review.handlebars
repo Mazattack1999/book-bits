@@ -1,15 +1,19 @@
 {{> card review}}
 
 {{#if loggedIn}}
-<form class="comment-form">
+<div class="card m-3">
+  <form class="card-body comment-form">
+    <label class="form-label">Add a comment:</label>
   <div>
-    <textarea name="comment-body"></textarea>
+    <textarea class="form-control" rows="3" name="comment-body"></textarea>
   </div>
 
   <div>
-    <button type="submit">add comment</button>
+    <button class="btn btn-primary m-2" type="submit">Comment</button>
   </div>
 </form>
+</div>
+
 {{/if}}
 
 {{> comments book.comments}}

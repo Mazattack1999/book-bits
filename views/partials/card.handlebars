@@ -1,8 +1,12 @@
-<a href="/review/{{id}}">
-    <div class="card">
-        <img src="{{imageUrl}}" width="200" height="200">
-        <h3 class="title">{{book_title}}</h3>
-        <p>{{user.username}}</p>
-        <p>{{review_text}}</p>
-    </div>
-</a>
+<div class="card m-3">
+    <a id="review-card" href="/review/{{id}}">
+        <img class="card-img-top" src="{{imageUrl}}" width="200" height="200"  alt="">
+        <div class="card-body">
+            
+            <h3 class="title card-title">{{book_title}}</h3>
+            <p><em>{{author}}</em></p>
+            <p class="card-text">{{review_text}}</p>
+            <p class="text-end"><em>- {{user.username}}</em></p>
+        </div>
+    </a>
+</div>

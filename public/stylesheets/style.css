@@ -91,6 +91,11 @@
     color: white;
   }
 
+  #review-card {
+    text-decoration: none;
+    color: black;
+  }
+
   /* header h1 {
     font-size: 1em;
   } */
