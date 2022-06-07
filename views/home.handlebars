@@ -4,38 +4,44 @@
     {{#if loggedIn}}
     {{!-- display nothing, but background img if logged In --}}
     {{else}}
-    <article class="login-signup">
-    <form class="login-form">
-        <div>
-            <label for="username-login">User Name:</label>
-            <input type="text" id="username-login" />
-        </div>
-        <div>
-            <label for="password-login">password:</label>
-            <input type="password" id="password-login" />
-        </div>
-        <div>
-            <button type="submit">login</button>
-        </div>
-    </form>
+    <article class="container login-signup">
+        <div class="row m-3">
+            <form class="col-5 card m-4 login-form card-body d-flex flex-wrap">
+                <h3>Log In:</h3>
+                <div>
+                    <label class="col-form-label mb-3" for="username-login">Username:</label>
+                    <input class="form-control" type="text" id="username-login" />
+                </div>
+                <div>
+                    <label class="col-form-label mb-3" for="password-login">Password:</label>
+                    <input class="form-control" type="password" id="password-login" />
+                </div>
+                <div class="d-grid gap-2 d-md-block m-3">
+                    <button class="btn btn-primary m-2" type="submit">Login</button>
+                </div>
+            </form>
 
-    <form class="signup-form">
-        <div>
-            <label for="username-signup">username:</label>
-            <input type="text" id="username-signup" />
+            <form class="col-5 card m-4 signup-form card-body d-flex flex-wrap">
+                <h3>Sign Up:</h3>
+                <div>
+                    <label class="col-form-label mb-3" for="username-signup">Choose a username:</label>
+                    <input class="form-control" type="text" id="username-signup" />
+                </div>
+                <div>
+                    <label class="col-form-label mb-3" for="password-signup">Create a password:</label>
+                    <input class="form-control" type="password" id="password-signup" />
+                </div>
+                <div class="d-grid gap-2 d-md-block m-3">
+                    <button class="btn btn-primary m-2" type="submit">Sign up!</button>
+                </div>
+            </form>
         </div>
-        <div>
-            <label for="password-signup">password:</label>
-            <input type="password" id="password-signup" />
-        </div>
-        <div>
-            <button type="submit">signup</button>
-        </div>
-    </form>
-    {{/if}}
 
-    {{#each reviews as |review|}}
+
+        {{/if}}
+
+        {{#each reviews as |review|}}
         {{> card review}}
-    {{/each}}
-</article>
-<script src="/javascript/login.js"></script>
+        {{/each}}
+    </article>
+    <script src="/javascript/login.js"></script>

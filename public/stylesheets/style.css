@@ -2,26 +2,26 @@
     box-sizing: border-box;
   }
   
-  body, html {
+  /* body, html {
     height: 100%;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
     color: #333;
   }
-  
-  a {
+   */
+  /* a {
     text-decoration: none;
     color: #225ca3;
     font-weight: bold;
     transition: color .1s;
-  }
+  } */
   
-  a:hover {
+  /* a:hover {
     color: #3486eb;
-  }
+  } */
   
-  button {
+  /* button {
     background-color: #225ca3;
     border: 0;
     padding: 1%;
@@ -30,68 +30,77 @@
     transition: background-color .1s;
     cursor: pointer;
     border-radius: 5px;
-  }
+  } */
   
-  button:hover {
+  /* button:hover {
     background-color: #3486eb;
-  }
+  } */
   
-  .review-list {
+  /* .review-list {
     margin: 0;
     padding: 0;
-  }
+  } */
   
-  textarea, input {
+  /* textarea, input {
     padding: .5%;
     border-radius: 5px;
     border: 1px solid #ccc;
-  }
+  } */
   
-  textarea:focus, input:focus {
+  /* textarea:focus, input:focus {
     outline: none;
     border: 1px solid #3486eb;
-  }
+  } */
   
-  textarea {
+  /* textarea {
     min-width: 40%;
     min-height: 100px;
-  }
+  } */
   
-  form > div {
+  /* form > div {
     margin-bottom: 2%;
-  }
+  } */
   
-  form label {
+  /* form label {
     display: block;
-  }
+  } */
   
-  .wrapper {
+  /* .wrapper {
     width: 100%;
     min-height: 100%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-  }
-  
-  header {
+  } */
+
+  /* header {
     border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1%;
+  } */
+
+  #header {
+    text-decoration: none;
+    color: white;
   }
-  
-  header h1 {
+
+  .nav-link {
+    color: white;
+  }
+
+  /* header h1 {
     font-size: 1em;
-  }
+  } */
   
-  main {
+  /* main {
     flex: 1;
     padding: 2% 4%;
-  }
+  } */
   
-  .btn-no-style {
+  /* .btn-no-style {
     background: none;
     border: none;
     padding: 0;
@@ -102,77 +111,68 @@
     font-weight: bold;
     transition: color .1s;
     margin-left: 16px;
-  }
+  } */
   
-  .btn-no-style:hover {
+  /* .btn-no-style:hover {
     background: none;
     color: #3486eb;
-  }
+  } */
   
-  .delete-review-btn {
+  /* .delete-review-btn {
     background-color: #d41414;
-  }
-  
+  } */
+/*   
   .delete-review-btn:hover {
     background-color: #ff643d;
-  }
+  } */
   
-  .review {
+  /* .review {
     margin-bottom: 2%;
     line-height: 150%;
-  }
+  } */
   
-  .review .title span {
+  /* .review .title span {
     font-style: italic;
     font-size: 90%;
     color: #7d7d7d;
-  }
+  } */
   
-  .edit-link {
+  /* .edit-link {
     display: block;
     margin: -1.5% 0 2% 0;
-  }
-  
-  .upvote-btn {
-    background-color: #197d0f;
-    transition: background-color .1s;
-  }
-  
-  .upvote-btn:hover {
-    background-color: #1f9c13;
-  }
-  
+  } */
+/*   
   .comment-form {
     margin-bottom: 5%;
-  }
+  } */
   
-  .comment {
+  /* .comment {
     padding: 1%;
     margin-bottom: 1%;
   }
-  
-  .comment:nth-child(odd) {
+   */
+  /* .comment:nth-child(odd) {
     background-color: #fff5eb;
-  }
+  } */
   
-  .comment .meta {
+  /* .comment .meta {
     font-size: 90%;
     margin-bottom: .5%;
     opacity: .6;
-  }
+  } */
   
-  .new-review-form input {
+  /* .new-review-form input {
     width: 300px;
-  }
+  } */
   
-  .edit-review-form {
+  /* .edit-review-form {
     margin-bottom: 5%;
-  }
+  } */
   
-  footer {
+  /* footer {
     border-top: 1px solid #ccc;
     display: flex;
     justify-content: center;
     padding: 1%;
     font-size: 110%;
-  }
+  } */
