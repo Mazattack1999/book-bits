@@ -28,8 +28,8 @@
 
         {{#each reviews as |review|}}
             {{> card review}}
-            <button class="btn btn-primary mb-3">
-                <a href="/dashboard/edit/{{review.id}}" class="edit-link">Edit review</a>
+            <button type="submit" class="btn btn-primary m-3">
+                <a href="/dashboard/edit/{{review.id}}" class="edit-link btn-link">Edit review</a>
             </button>
         {{/each}}
 

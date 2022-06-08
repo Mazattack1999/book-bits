@@ -1,5 +1,5 @@
 <article>
-  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <button class="btn btn-primary m-2"><a href="/dashboard" class="btn-link">Back to dashboard</a></button>
   <div class="card m-4">
     <h1 class="card-header">Edit Review:</h1>
     <form class="card-body edit-review-form">
@@ -14,7 +14,7 @@
       <input name="author" type="text" value="{{review.author}}" class="form-control m-2" />
 
       <label for="star_rating">Star Rating</label>
-      <input type="number" id="star_rating" name="star_rating" placeholder="1-5"/>
+      <input class="form-control m-2" type="number" id="star_rating" name="star_rating" placeholder="1-5"/>
 
       <label class="form-label m-2" for="review-text">Content:</label>
       <textarea name="review-text" type="text" class="form-control m-2" rows="5">{{review.review_text}}</textarea>
