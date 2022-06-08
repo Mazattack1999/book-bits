@@ -25,7 +25,7 @@ router.get("/login", (req, res) => {
     res.redirect("/");
     return;
   }
-  res.render("login");
+  res.render("home");
 });
 
 // user signup
@@ -34,7 +34,7 @@ router.get("/signup", (req, res) => {
     res.redirect("/");
     return;
   }
-  res.render("signup");
+  res.render("home");
 });
 
 // GET single user review

@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { User, Review, Comment } = require('../../models');
-const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
 // GET api/reviews
@@ -32,13 +31,6 @@ router.get('/:id', async (req, res) => {
             where: {
                 id: req.params.id
             },
-            // attributes: [
-            //     'id', 
-            //     'post_url', 
-            //     'title', 
-            //     'created_at',
-            //     [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-            // ],
             include: [
                 {
                     model: Comment,
@@ -78,7 +70,7 @@ router.post('/', withAuth, async (req, res) => {
             star_rating: req.body.star_rating,
             user_id: req.session.user_id
         })
-
+        console.log(dbReviewData);
         res.json(dbReviewData);
 
     } catch (err) {
