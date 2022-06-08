@@ -1,6 +1,6 @@
 // Carolyn Hudson's code
 const router = require("express").Router();
-const { Review } = require("../models");
+const { Review, User } = require("../models");
 const withAuth = require("../utils/auth");
 
 // GET all user reviews for dashboard
@@ -10,6 +10,10 @@ router.get("/", withAuth, async (req, res) => {
       where: {
         user_id: req.session.user_id,
       },
+      include: {
+        model: User,
+        attribute: ['username']
+      }
     });
 
     const reviews = dbReviewData.map((review) => review.get({ plain: true }));
