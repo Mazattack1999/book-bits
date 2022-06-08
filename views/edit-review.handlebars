@@ -5,23 +5,19 @@
     <form class="card-body edit-review-form">
 
       {{!-- use this for front-end js to capture review id to edit --}}
-      <input type="hidden" name="post-id" value="{{review.id}}" />
+      <input type="hidden" name="review-id" value="{{review.id}}" />
 
-      <h4>Book Title: <strong>{{review.book_title}}</strong></h4>
+      <label for="review-title" class="form-label m-2">Book Title:</label>
+      <input name="review-title" type="text" value="{{review.book_title}}" class="form-control m-2" />
 
-{{!-- need to make place in review table to save revew title? --}}
-      <label for="post-title" class="form-label m-2">Title:</label>
-      <input name="post-title" type="text" value="{{review.title}}" class="form-control m-2" />
+      <label for="author" class="form-label m-2">Author:</label>
+      <input name="author" type="text" value="{{review.author}}" class="form-control m-2" />
 
+      <label for="star_rating">Star Rating</label>
+      <input type="number" id="star_rating" name="star_rating" placeholder="1-5"/>
 
-      <div>
-        <label for="star-rating" class="form-label m-2">Star-Rating:</label>
-        {{!-- insert star review code --}}
-      </div>
-
-
-      <label class="form-label m-2" for="content">Content:</label>
-      <textarea name="post-content" type="text" class="form-control m-2" rows="5">{{review.review_text}}</textarea>
+      <label class="form-label m-2" for="review-text">Content:</label>
+      <textarea name="review-text" type="text" class="form-control m-2" rows="5">{{review.review_text}}</textarea>
 
 
       <div class="d-grid gap-2 d-md-block m-3">
@@ -34,8 +30,5 @@
 
 </article>
 
-{{> comments review.comments}}
-
 <script src="/javascript/edit-review.js"></script>
 <script src="/javascript/delete-review.js"></script>
-<script src="/javascript/comment.js"></script>
