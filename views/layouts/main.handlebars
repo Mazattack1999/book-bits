@@ -14,36 +14,21 @@
 
 <body>
   <header class="bg-dark d-flex flex-row justify-content-between">
-    <nav class="navbar navbar-primary p-3 w-100 d-flex flex-row">
+    <nav class="navbar navbar-primary p-3 w-100 d-flex flex-row container">
       <div class="row">
-          <a id="header" class="display-1 col-xs-12 justify-content-sm-center" href="/"><strong>Book Bits</strong></a>
+          <a class="btn-link display-1 col-xs-12 justify-content-sm-center" href="/"><strong>Book Bits</strong></a>
 
-        {{!-- remove search container if we run out of time --}}
-        {{!-- <div class="search-container"> --}}
-          {{!-- <form class="navbar-form" action="/search_page">
-            <div class="col-auto form-group">
-              <input class="form-control" type="text" placeholder="Search.." name="search">
-              <button class="btn btn-primary" id="searchBtn" type="submit"><i class="fa fa-search"></i></button>
-            </div>
-          </form> --}}
-          {{!--
-        </div> --}}
         {{#if loggedIn}}
-        {{!-- <div class="d-flex flex-row justify-content-end"> --}}
-          <ul class="nav navbar-nav d-flex flex-row justify-content-between">
+          <ul class="nav navbar-nav d-flex flex-row justify-content-end">
             <li class="nav-item p-2">
-              <a class="nav-link" href="/dashboard">My Posts</a>
-            </li>
-            <li class="nav-item p-2">
-              <a class="nav-link" href="/saved">Saved Posts</a>
+              <a class="nav-link btn-link" href="/dashboard">My Reviews</a>
             </li>
             <li class="nav-item p-2">
               <button id="logout" class="btn btn-primary btn-no-style">Logout</button>
             </li>
           </ul>
-        {{!-- </div> --}}
-
         {{/if}}
+
       </div>
 
     </nav>

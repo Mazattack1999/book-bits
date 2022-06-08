@@ -7,12 +7,12 @@
             <input class="form-control mb-3" type="text" id="review-title" name="review-title" />
         </div>
         <div>
-            <label for="author">Author</label>
-            <input type="text" id="author" name="author" />
+            <label class="form-label mb-3" for="author">Author:</label>
+            <input type="text" id="author" name="author" class="form-control mb-3" />
         </div>
         <div>
-            <label for="star_rating">Star Rating</label>
-            <input type="number" id="star_rating" name="star_rating" placeholder="1-5" />
+            <label class="form-label mb-3" for="star_rating">Star Rating:</label>
+            <input type="number" id="star_rating" name="star_rating" placeholder="1-5" class="form-control mb-3" />
         </div>
         <div>
             <label class="form-label mb-3" for="review">Review:</label>
@@ -24,15 +24,19 @@
 
 {{#if reviews.length}}
 <section>
-    <h2> Your Reviews</h2>
-    <ol>
-        {{#each reviews as |review|}}
-        <li>
-            {{> card review}}
-            <a href="/dashboard/edit/{{review.id}}" class="edit-link">Edit review</a>
-        </li>
-        {{/each}}
-    </ol>
+    <h2 class="m-3"> Your Reviews:</h2>
+
+    {{#each reviews as |review|}}
+    {{> card review}}
+    <div class="container d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary m-3">
+            <a href="/dashboard/edit/{{review.id}}" class="edit-link btn-link">Edit review</a>
+        </button>
+    </div>
+    <hr>
+
+    {{/each}}
+
 </section>
 {{/if}}
 
