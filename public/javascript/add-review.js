@@ -28,6 +28,6 @@ async function newReviewFormHandler(event) {
     } else {
       alert(response.statusText);
     }
-  }
+}
   
   document.querySelector('.new-review-form').addEventListener('submit', newReviewFormHandler);
