@@ -7,7 +7,8 @@
   <title>Book Bits</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
+  <script rel="stylesheet" src="https://kit.fontawesome.com/372064985b.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
@@ -17,25 +18,15 @@
       <div class="row">
           <a id="header" class="display-1 col-xs-12 justify-content-sm-center" href="/"><strong>Book Bits</strong></a>
 
-        {{!-- remove search container if we run out of time --}}
-        {{!-- <div class="search-container"> --}}
-          {{!-- <form class="navbar-form" action="/search_page">
-            <div class="col-auto form-group">
-              <input class="form-control" type="text" placeholder="Search.." name="search">
-              <button class="btn btn-primary" id="searchBtn" type="submit"><i class="fa fa-search"></i></button>
-            </div>
-          </form> --}}
-          {{!--
-        </div> --}}
         {{#if loggedIn}}
         {{!-- <div class="d-flex flex-row justify-content-end"> --}}
           <ul class="nav navbar-nav d-flex flex-row justify-content-between">
             <li class="nav-item p-2">
               <a class="nav-link" href="/dashboard">My Posts</a>
             </li>
-            <li class="nav-item p-2">
+            {{!-- <li class="nav-item p-2">
               <a class="nav-link" href="/saved">Saved Posts</a>
-            </li>
+            </li> --}}
             <li class="nav-item p-2">
               <button id="logout" class="btn btn-primary btn-no-style">Logout</button>
             </li>
