@@ -1,0 +1,27 @@
+{{> card review}}
+
+{{#if loggedIn}}
+<div class="container">
+  <div class="card m-3 mw-70">
+    <form class="card-body comment-form">
+      <label class="form-label">Add a comment:</label>
+      <div>
+        <textarea class="form-control" rows="3" name="comment-body"></textarea>
+      </div>
+
+      <div>
+        <button class="btn btn-primary m-2" type="submit">Comment</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+{{/if}}
+
+
+{{> comments review.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}

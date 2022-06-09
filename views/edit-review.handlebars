@@ -1,0 +1,34 @@
+<article>
+  <button class="btn btn-primary m-2"><a href="/dashboard" class="btn-link">Back to dashboard</a></button>
+  <div class="card m-4">
+    <h1 class="card-header">Edit Review:</h1>
+    <form class="card-body edit-review-form">
+
+      {{!-- use this for front-end js to capture review id to edit --}}
+      <input type="hidden" name="review-id" value="{{review.id}}" />
+
+      <label for="review-title" class="form-label m-2">Book Title:</label>
+      <input name="review-title" type="text" value="{{review.book_title}}" class="form-control m-2" />
+
+      <label for="author" class="form-label m-2">Author:</label>
+      <input name="author" type="text" value="{{review.author}}" class="form-control m-2" />
+
+      <label for="star_rating">Star Rating</label>
+      <input class="form-control m-2" type="number" id="star_rating" name="star_rating" placeholder="1-5"/>
+
+      <label class="form-label m-2" for="review-text">Content:</label>
+      <textarea name="review-text" type="text" class="form-control m-2" rows="5">{{review.review_text}}</textarea>
+
+
+      <div class="d-grid gap-2 d-md-block m-3">
+        <button type="submit" class="btn btn-primary">Update Review</button>
+        <button type="button" class="delete-review-btn btn btn-danger">Delete Review</button>
+      </div>
+
+    </form>
+  </div>
+
+</article>
+
+<script src="/javascript/edit-review.js"></script>
+<script src="/javascript/delete-review.js"></script>

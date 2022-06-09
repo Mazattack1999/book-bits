@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(202, 201, 201);
+}
+
+#review-card {
+  text-decoration: none;
+  color: black;
+}
+
+.btn-link {
+  text-decoration: none;
+  color: white;
+}
