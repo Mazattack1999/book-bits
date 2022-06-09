@@ -6,7 +6,10 @@ const { Review, User, Comment } = require("../models");
 router.get("/", async (req, res) => {
   try {
     const dbReviewData = await Review.findAll({
-      include: [User],
+      include: {
+        model: User,
+        attributes: ['username']
+    }
     });
     const reviews = dbReviewData.map((review) => review.get({ plain: true }));
     res.render("home", {
@@ -46,10 +49,16 @@ router.get("/review/:id", async (req, res) => {
       },
 
       include: [
-        User,
+        {
+          model: User,
+          attributes: ['username']
+        },
         {
           model: Comment,
-          include: [User],
+          include: {
+            model: User,
+            attributes: ['username']
+        }
         },
       ],
     });
