@@ -9,7 +9,8 @@ router.get("/", async (req, res) => {
       include: {
         model: User,
         attributes: ['username']
-    }
+    },
+      order: [['id', 'DESC']],
     });
     const reviews = dbReviewData.map((review) => review.get({ plain: true }));
     res.render("home", {
@@ -47,7 +48,7 @@ router.get("/review/:id", async (req, res) => {
       where: {
         id: req.params.id,
       },
-
+      order: [[{model: Comment}, 'id', 'DESC']],
       include: [
         {
           model: User,
