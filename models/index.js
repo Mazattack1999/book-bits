@@ -19,14 +19,6 @@ Comment.belongsTo(Review, {
     foreignKey: 'review_id'
 });
 
-// Review.hasOne(Book, {
-//     foreignKey: 'book_id'
-// });
-
-// Book.belongsTo(Review, {
-//     foreignKey: 'book_id'
-// });
-
 User.hasMany(Comment, {
     foreignKey: 'user_id'
 });
