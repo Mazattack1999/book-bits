@@ -6,6 +6,7 @@ const { Review, User, Comment } = require("../models");
 router.get("/", async (req, res) => {
   try {
     const dbReviewData = await Review.findAll({
+      order: [['id', 'DESC']],
       include: [User],
     });
     const reviews = dbReviewData.map((review) => review.get({ plain: true }));
@@ -44,7 +45,7 @@ router.get("/review/:id", async (req, res) => {
       where: {
         id: req.params.id,
       },
-
+      order: [[{model: Comment}, 'id', 'DESC']],
       include: [
         User,
         {
