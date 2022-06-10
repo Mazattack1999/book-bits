@@ -12,34 +12,33 @@
 </head>
 
 <body>
-  <header class="bg-dark d-flex flex-row justify-content-between">
-    <nav class="navbar navbar-primary p-3 w-100 d-flex flex-row container">
-      <div class="row">
-          <a class="btn-link display-1 col-xs-12 justify-content-sm-center" href="/"><strong>Book Bits</strong></a>
+  <header class="bg-dark">
+    <nav class="p-3">
+      <a class="btn-link display-1" href="/"><strong>Book Bits</strong></a>
 
-        {{#if loggedIn}}
-          <ul class="nav navbar-nav d-flex flex-row justify-content-end">
-            <li class="nav-item p-2">
-              <a class="nav-link btn-link" href="/dashboard">My Reviews</a>
-            </li>
-            <li class="nav-item p-2">
-              <button id="logout" class="btn btn-primary btn-no-style">Logout</button>
-            </li>
-          </ul>
-        {{/if}}
-
-      </div>
+      {{#if loggedIn}}
+      <ul class="nav justify-content-end">
+        <li class="nav-item p-2">
+          <a class="nav-link btn-link" href="/dashboard">My Reviews</a>
+        </li>
+        <li class="nav-item p-2">
+          <button id="logout" class="btn btn-primary btn-no-style">Logout</button>
+        </li>
+      </ul>
+      {{/if}}
 
     </nav>
   </header>
+  <img src="/assets/bookshelf.jpg" class="w-100" />
 
   <main>
     {{{ body }}}
   </main>
 
-{{#if loggedIn}}
-<script src="/javascript/logout.js"></script>
-{{/if}}
-<script rel="stylesheet" src="https://kit.fontawesome.com/372064985b.js" crossorigin="anonymous"></script>
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+  <script rel="stylesheet" src="https://kit.fontawesome.com/372064985b.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -1,11 +1,11 @@
 <div class="container d-flex align-items-center flex-wrap justify-content-center">
-    <i class="fa-solid fa-book-bookmark fa-5x m-3"></i>
+    <i class="fa-solid fa-book-bookmark fa-5x m-3 book"></i>
     <div class="card m-3 w-75">
         <a id="review-card" href="/review/{{id}}">
             <div class="card-body">
                 <h3 class="title card-title">{{book_title}}</h3>
-                 {{> star-review star_rating }}
                 <p><em>{{author}}</em></p>
+                {{> star-review star_rating }}
                 <p class="card-text">{{review_text}}</p>
                 <p class="text-end"><em>- {{user.username}}</em></p>
             </div>

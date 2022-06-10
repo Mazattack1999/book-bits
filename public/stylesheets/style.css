@@ -25,3 +25,9 @@ a:hover {
   text-decoration: none;
   color: white;
 }
+
+.book {
+  background: white;
+  padding: 2%;
+  border-radius: 10px;
+}

@@ -4,19 +4,19 @@
     <form class="card-body new-review-form">
         <div>
             <label class="form-label mb-3" for="review-title">Title:</label>
-            <input class="form-control mb-3" type="text" id="review-title" name="review-title" />
+            <input class="form-control mb-3" type="text" id="review-title" name="review-title" placeholder="Book Title" />
         </div>
         <div>
             <label class="form-label mb-3" for="author">Author:</label>
-            <input type="text" id="author" name="author" class="form-control mb-3" />
+            <input type="text" id="author" name="author" class="form-control mb-3" placeholder="Author" />
         </div>
         <div>
             <label class="form-label mb-3" for="star_rating">Star Rating:</label>
-            <input type="number" id="star_rating" name="star_rating" placeholder="1-5" class="form-control mb-3" />
+            <input type="number" id="star_rating" name="star_rating" placeholder="1-5" class="form-control mb-3"  />
         </div>
         <div>
             <label class="form-label mb-3" for="review">Review:</label>
-            <textarea class="form-control mb-3" id="review" name="review" rows="5"></textarea>
+            <textarea class="form-control mb-3" id="review" name="review" rows="5" placeholder="What did you think of the book?" ></textarea>
         </div>
         <button type="submit" class="btn btn-primary mb-3">Create</button>
     </form>
@@ -29,12 +29,11 @@
     {{#each reviews as |review|}}
     {{> card review}}
     <div class="container d-flex justify-content-center">
-        <button type="submit" class="btn btn-primary m-3">
+        <button type="submit" class="btn btn-primary mb-4">
             <a href="/dashboard/edit/{{review.id}}" class="edit-link btn-link">Edit review</a>
         </button>
     </div>
     <hr>
-
     {{/each}}
 
 </section>
