@@ -26,14 +26,6 @@ a:hover {
   color: white;
 }
 
-/* .bg-img {
-  background-image: url("/assets/book-background-blur.jpg");
-  background-position: center;
-  height: 100%;
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
-} */
-
 .book {
   background: white;
   padding: 2%;
