@@ -1,6 +1,8 @@
 {{> card review}}
-
+{{!-- single review card --}}
 {{#if loggedIn}}
+
+{{!-- comment form --}}
 <div class="container">
   <div class="card m-3 mw-70">
     <form class="card-body comment-form">
@@ -19,7 +21,7 @@
 
 {{/if}}
 
-
+{{!-- display comments below user review --}}
 {{> comments review.comments}}
 
 {{#if loggedIn}}

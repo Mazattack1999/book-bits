@@ -2,6 +2,7 @@
     {{#if loggedIn}}
  
     {{else}}
+    {{!-- loggin/signp form displayed if user not logged in --}}
     <article class="container login-signup">
         <div class="row m-3">
             <form class="col-5 card m-4 login-form card-body d-flex flex-wrap">
@@ -37,7 +38,7 @@
 
         <script src="/javascript/login.js"></script>
         {{/if}}
-
+{{!-- dislays review cards user created --}}
         {{#each reviews as |review|}}
         {{> card review}}
         {{/each}}

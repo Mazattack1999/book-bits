@@ -1,3 +1,4 @@
+// function to add a comment to a posted review
 async function newCommentFormHandler(event) {
     event.preventDefault();
 
@@ -20,7 +21,7 @@ async function newCommentFormHandler(event) {
 
     console.log(response)
     
-  
+  // reloads the page to display new comment if response succesfully exicuted 
     if (response.ok) {
         document.location.reload();
     } else {
