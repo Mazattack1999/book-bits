@@ -15,7 +15,7 @@
   <header class="bg-dark">
     <nav class="p-3">
       <a class="btn-link display-1" href="/"><strong>Book Bits</strong></a>
-
+{{!-- if logged in display these nav bar links --}}
       {{#if loggedIn}}
       <ul class="nav justify-content-end">
         <li class="nav-item p-2">
@@ -38,6 +38,7 @@
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{/if}}
+  {{!-- icon script --}}
   <script rel="stylesheet" src="https://kit.fontawesome.com/372064985b.js" crossorigin="anonymous"></script>
 </body>
 

@@ -1,3 +1,4 @@
+// function to to collect login information
 async function loginFormHandler(event) {
     event.preventDefault();
   
@@ -22,6 +23,7 @@ async function loginFormHandler(event) {
     }
   }
   
+  // function to collect account signup information
   async function signupFormHandler(event) {
     event.preventDefault();
   

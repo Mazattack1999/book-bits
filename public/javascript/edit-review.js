@@ -1,3 +1,4 @@
+// function to edit a posted review
 async function editReviewFormHandler(event) {
     event.preventDefault();
   
@@ -7,6 +8,7 @@ async function editReviewFormHandler(event) {
     const review_text = document.querySelector('textarea[name="review-text"]').value;
     const review_id = document.querySelector('input[name="review-id"]').value;
 
+    // collects reviews information to edit
     const response = await fetch(`/api/reviews/${review_id}`, {
       method: 'PUT',
       body: JSON.stringify({
@@ -30,11 +32,13 @@ async function editReviewFormHandler(event) {
     }
 }
 
+// function to delete a users review
 async function deleteReviewFormHandler(event) {
     event.preventDefault();
 
     const review_id = document.querySelector('input[name="review-id"]').value;
 
+    // collects reviews id
     const response = await fetch(`/api/reviews/${review_id}`, {
       method: 'DELETE',
       headers: {
